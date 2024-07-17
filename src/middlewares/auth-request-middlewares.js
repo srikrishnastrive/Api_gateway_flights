@@ -30,6 +30,9 @@ async function checkAuth(req, res, next) {
             next();
         }
     } catch(error) {
+        if(error.name == "TokenExpiredError"){
+            throw new AppError('JWT token expired',StatusCodes.BAD_REQUEST);
+        }
         return res
                 .status(error.statusCode)
                 .json(error);
