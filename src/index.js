@@ -23,6 +23,8 @@ app.use(
     createProxyMiddleware({
       target: ServerConfig.FLIGHT_SERVICE,
       changeOrigin: true,
+      pathRewrite: {'^/flightService': '/'}
+
     }),
   );
   app.use(
@@ -30,6 +32,7 @@ app.use(
     createProxyMiddleware({
       target: ServerConfig.BOOKING_SERVICE,
       changeOrigin: true,
+      pathRewrite : {'^/bookingService' : '/'}
     }),
   );
 
