@@ -95,7 +95,7 @@ async function addRolltoUser(data){
     
 }
 
-//if logged in user is admin then we will allocate rules
+//if logged in user is admin then we will allocate the another user roles
 
 async function isAdmin(id) {
     try {
